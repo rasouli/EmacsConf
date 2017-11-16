@@ -23,3 +23,6 @@
 
 ;; hide ugly toolbar
 (tool-bar-mode -1)
+
+;; enable completing coressponding parentheses, brackets...
+(electric-pair-mode 1)
