@@ -17,4 +17,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; disable welcome screen
 (setq inhibit-startup-screen t)
+
+;; hide ugly toolbar
+(tool-bar-mode -1)
