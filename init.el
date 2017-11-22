@@ -8,7 +8,7 @@
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/"))))
- '(package-selected-packages nil))
+ '(package-selected-packages (quote (dracula-theme nlinum haskell-mode))))
 (package-initialize)
 
 (custom-set-faces
@@ -24,5 +24,11 @@
 ;; hide ugly toolbar
 (tool-bar-mode -1)
 
-;; enable completing coressponding parentheses, brackets...
-(electric-pair-mode 1)
+;; match parenthesis and bracket by typing first pair
+(electric-pair-mode t)
+
+;; turn on line number
+(global-nlinum-mode t)
+
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'dracula t)
