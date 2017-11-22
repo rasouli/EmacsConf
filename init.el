@@ -30,5 +30,14 @@
 ;; turn on line number
 (global-nlinum-mode t)
 
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;; install dracula-theme from melpa
 (load-theme 'dracula t)
+
+;; load neo-tree and config it
+(add-to-list 'load-path "/home/reza/.emacs.d/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+;; neo-tree always jump to the current node
+(setq neo-smart-open t)
+
