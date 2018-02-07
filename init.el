@@ -8,7 +8,9 @@
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/"))))
- '(package-selected-packages (quote (dracula-theme nlinum haskell-mode))))
+ '(package-selected-packages
+   (quote
+    (ac-haskell-process auto-complete dracula-theme nlinum haskell-mode ensime))))
 (package-initialize)
 
 (custom-set-faces
@@ -41,3 +43,16 @@
 ;; neo-tree always jump to the current node
 (setq neo-smart-open t)
 
+;; haskell auto-complete mode
+;; (require 'ac-haskell-process) ; if not installed via package.el
+(add-hook 'interactive-haskell-mode-hook 'ac-haskell-process-setup)
+(add-hook 'haskell-interactive-mode-hook 'ac-haskell-process-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'haskell-interactive-mode))
+
+
+;; enable auto-complete globally
+(global-auto-complete-mode t)
+
+;; trigger auto-complete by TAB, after inserting character
+(ac-set-trigger-key "TAB")
