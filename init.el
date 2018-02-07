@@ -10,7 +10,13 @@
      ("melpa-stable" . "http://stable.melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (ac-haskell-process auto-complete dracula-theme nlinum haskell-mode ensime))))
+    (ac-haskell-process auto-complete dracula-theme nlinum haskell-mode))))
+
+;; ensime baby
+(use-package ensime
+  :ensure t
+  :pin melpa-stable)
+
 (package-initialize)
 
 (custom-set-faces
@@ -56,3 +62,6 @@
 
 ;; trigger auto-complete by TAB, after inserting character
 (ac-set-trigger-key "TAB")
+
+;; ensime specific configuration
+;; none yet
